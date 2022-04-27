@@ -1,4 +1,7 @@
 import {useState, useEffect} from 'react';
+
+import SearchBox from './components/SearchBox/SearchBox';
+
 import './App.css';
 
 const App = () => {
@@ -12,6 +15,7 @@ const App = () => {
 
   return (
     <div>
+      <SearchBox />
       {robots.map((robot) => (
         <h1 key={robot.id}>{robot.name}</h1>
       ))}
