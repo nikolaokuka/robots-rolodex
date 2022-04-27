@@ -1,12 +1,12 @@
 import './SearchBox.css';
 
-const SearchBox = ({onChangeHandler}) => {
+const SearchBox = ({onSearchChange}) => {
   return (
     <input
       className='search-box'
       placeholder='search robots'
       type='search'
-      onChange={onChangeHandler}
+      onChange={onSearchChange}
     />
   );
 };

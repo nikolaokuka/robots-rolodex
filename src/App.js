@@ -6,6 +6,8 @@ import './App.css';
 
 const App = () => {
   const [robots, setRobots] = useState([]);
+  const [filteredRobots, setFilteredRobots] = useState(robots);
+  const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -13,10 +15,22 @@ const App = () => {
       .then((users) => setRobots(users));
   }, []);
 
+  useEffect(() => {
+    const filtered = robots.filter((robot) => {
+      return robot.name.toLocaleLowerCase().includes(searchInput);
+    });
+
+    setFilteredRobots(filtered);
+  }, [robots, searchInput]);
+
+  const onSearchChange = (event) => {
+    setSearchInput(event.target.value.toLocaleLowerCase());
+  };
+
   return (
     <div>
-      <SearchBox />
-      {robots.map((robot) => (
+      <SearchBox onSearchChange={onSearchChange} />
+      {filteredRobots.map((robot) => (
         <h1 key={robot.id}>{robot.name}</h1>
       ))}
     </div>
