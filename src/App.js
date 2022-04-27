@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react';
 
 import SearchBox from './components/SearchBox/SearchBox';
+import CardList from './components/CardList/CardList';
 
 import './App.css';
-import CardList from './components/CardList/CradList';
 
 const App = () => {
   const [robots, setRobots] = useState([]);
@@ -29,15 +29,9 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className='App'>
       <SearchBox onSearchChange={onSearchChange} />
-      {filteredRobots.map(({id, name}) => (
-        <CardList
-          key={id}
-          id={id}
-          name={name}
-        />
-      ))}
+      <CardList robots={filteredRobots} />
     </div>
   );
 };
