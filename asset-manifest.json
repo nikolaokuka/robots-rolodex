@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/robots-rolodex/static/css/main.26d93930.css",
+    "main.css": "/robots-rolodex/static/css/main.7810f72c.css",
     "main.js": "/robots-rolodex/static/js/main.89a39da0.js",
     "index.html": "/robots-rolodex/index.html",
-    "main.26d93930.css.map": "/robots-rolodex/static/css/main.26d93930.css.map",
+    "main.7810f72c.css.map": "/robots-rolodex/static/css/main.7810f72c.css.map",
     "main.89a39da0.js.map": "/robots-rolodex/static/js/main.89a39da0.js.map"
   },
   "entrypoints": [
-    "static/css/main.26d93930.css",
+    "static/css/main.7810f72c.css",
     "static/js/main.89a39da0.js"
   ]
 }
