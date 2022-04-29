@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nikolaokuka/robots-rolodex/static/css/main.26d93930.css",
+    "main.js": "/nikolaokuka/robots-rolodex/static/js/main.89a39da0.js",
+    "index.html": "/nikolaokuka/robots-rolodex/index.html",
+    "main.26d93930.css.map": "/nikolaokuka/robots-rolodex/static/css/main.26d93930.css.map",
+    "main.89a39da0.js.map": "/nikolaokuka/robots-rolodex/static/js/main.89a39da0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.26d93930.css",
+    "static/js/main.89a39da0.js"
+  ]
+}
