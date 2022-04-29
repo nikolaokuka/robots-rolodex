@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import SearchBox from './components/SearchBox/SearchBox';
 import CardList from './components/CardList/CardList';
 import Title from './components/Title/Title';
+import Footer from './components/Footer/Footer';
 
 import './App.css';
 
@@ -34,6 +35,7 @@ const App = () => {
       <Title text='Robots Rolodex' />
       <SearchBox onSearchChange={onSearchChange} />
       <CardList robots={filteredRobots} />
+      <Footer />
     </div>
   );
 };
