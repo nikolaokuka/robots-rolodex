@@ -1,6 +1,14 @@
+import { Robot } from '../../App';
+
 import './Card.css';
 
-const Card = ({id, name, email}) => {
+type CardProps = {
+  robot: Robot;
+};
+
+const Card = ({ robot }: CardProps) => {
+  const { id, name, email } = robot;
+
   return (
     <div className='card'>
       <img

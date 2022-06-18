@@ -1,26 +1,33 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 
 import SearchBox from './components/SearchBox/SearchBox';
 import CardList from './components/CardList/CardList';
 import Title from './components/Title/Title';
 import Footer from './components/Footer/Footer';
 import HashLoader from 'react-spinners/HashLoader';
+import { getData } from './utils/data.utils';
 
 import './App.css';
 
+export type Robot = {
+  id: string;
+  name: string;
+  email: string;
+}
+
 const App = () => {
-  const [robots, setRobots] = useState([]);
+  const [robots, setRobots] = useState<Robot[]>([]);
   const [filteredRobots, setFilteredRobots] = useState(robots);
   const [searchInput, setSearchInput] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((res) => res.json())
-      .then((users) => {
-        setRobots(users);
-        setLoading(false);
-      });
+    const fetchUsers = async () => {
+      const users = await getData<Robot[]>('https://jsonplaceholder.typicode.com/users')
+      setRobots(users);
+      setLoading(false);
+    }
+    fetchUsers();
   }, []);
 
   useEffect(() => {
@@ -31,7 +38,7 @@ const App = () => {
     setFilteredRobots(filtered);
   }, [robots, searchInput]);
 
-  const onSearchChange = (event) => {
+  const onSearchChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setSearchInput(event.target.value.toLocaleLowerCase());
   };
 
